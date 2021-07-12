@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.itemsHeader {
+  display: flex;
+  border: black 1px solid;
+  
+}
+.nav-links {
+  list-style: none;
+  margin : 10px ;
+}
+
+.SearchBar {
+  height: 40px;
+  width: 500px;
+  text-align: center;
+}
