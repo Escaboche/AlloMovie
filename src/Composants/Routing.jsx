@@ -4,6 +4,7 @@ import {Header} from './Header';
 import {Home} from './Home';
 import {Favoris} from './Favoris';
 import '../App.css';
+import { SearchBar } from './SearchBar';
 
 
 export const Routing = () => {
@@ -11,6 +12,7 @@ export const Routing = () => {
         <>
         <Router>
         <Header/>
+        <SearchBar/>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="./Favoris" exact component={Favoris}/>

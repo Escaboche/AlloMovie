@@ -4,8 +4,14 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import LogiqueModale from './LogiqueModale';
+import Modale from './Modale';
 
 const Cards = ({movie}) => {
+
+    const {visible, toggle} = LogiqueModale();
+    
+    console.log(visible)
     return (
         
         <div className='resultCard'>
@@ -13,7 +19,6 @@ const Cards = ({movie}) => {
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>
                         {movie.title}
-                        {movie.id}
                     </Typography>
                     <Typography variant="h5" component="h2">
                         {movie.poster_path ? ( 
@@ -28,8 +33,12 @@ const Cards = ({movie}) => {
                     </Typography>
                 </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">Details</Button>
-                        <Button size="small" >Favoris</Button>
+                    <div>
+                        <button type="button" className="button" onClick={toggle} >Details</button>
+                        <Modale visible={visible} cache={toggle}/>
+                    </div>
+                        <Button onsize="small" >Favoris</Button>
+                        
                     </CardActions>
             </Card>
             

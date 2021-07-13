@@ -13,7 +13,6 @@ const AcceuilCards = ({movie}) => {
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>
                         {movie.title}
-                        {movie.id}
                     </Typography>
                     <Typography variant="h5" component="h2">
                         {movie.poster_path ? ( 

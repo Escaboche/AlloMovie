@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import AcceuilCards from './AcceuilCards';
+import Cards from './Cards';
 
  const ApiAccueil = () => {
     const [results , setResults] = useState([]);
@@ -9,11 +9,10 @@ import AcceuilCards from './AcceuilCards';
     useEffect(() => {
         setIsLoad(false);
 
-        axios.get(`https://api.themoviedb.org/3/movie/671/recommendations?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=1`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie/?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=1`)
         
         .then((res) => {
             setResults(res.data.results);
-            console.log(res)
             setIsLoad(true);
             
             
@@ -36,7 +35,7 @@ import AcceuilCards from './AcceuilCards';
                     <ul className="results">
                         {results.map((movie) => (
                             <li key={movie.id}>
-                                <AcceuilCards movie={movie}/>
+                                <Cards movie={movie}/>
                             </li>
                         ))}
                     </ul>
