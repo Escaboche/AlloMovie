@@ -1,4 +1,5 @@
 import React from 'react'
+import ApiAccueil from './ApiAccueil';
 import {SearchBar} from './SearchBar';
 
 export const Home = () => {
@@ -12,6 +13,7 @@ export const Home = () => {
         return (
             <div>
                 <SearchBar />
+                <ApiAccueil />
             </div>
         ); 
     

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cards from './Cards';
 import {Formik , Form, Field} from 'formik/dist/index';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+
 
 
 
@@ -14,7 +14,8 @@ export const SearchBar = () => {
     
     const Submit = (values) => {
         setIsLoad(false);
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=7db9d91174d2436ccb6e7d2eeaefafeb&
+
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_KEY}&
         language=fr-FR&page=1&query=${values.search}&include_adult=false`)
         
         .then((res) => {
