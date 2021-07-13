@@ -39,4 +39,13 @@
 
 .results {
   list-style-type: none;
+  
+  
+  
+}
+
+.resultCard{
+  margin-top: 50px;
+  width: 300px;
+  height: 450px;
 }

@@ -1,13 +1,13 @@
-import React, {useState , useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Cards from './Cards';
 import {Formik , Form, Field} from 'formik/dist/index';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 
 
 export const SearchBar = () => {
-    const [query , setQuery] = useState(''); 
     const [results , setResults] = useState([]); 
     const [isLoad , setIsLoad] = useState(true);
     const [initialValues] = useState({search : ''});
@@ -39,7 +39,10 @@ export const SearchBar = () => {
         <>
 
         <div>
+        
                 {results.length > 0 && (
+                    
+        
                     <ul className="results">
                         {results.map((movie) => (
                             <li key={movie.id}>
@@ -47,7 +50,8 @@ export const SearchBar = () => {
                             </li>
                         ))}
                     </ul>
-                        
+                    
+        
                 )}
         </div>
         </>
