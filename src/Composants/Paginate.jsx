@@ -9,7 +9,7 @@ const Paginate = (props) => {
     for (let i = 1; i <= props.numberOfPages + 1; i++) {
         
 
-        pageLinks.push(<li  key={i} onClick={() => props.nextPage(i)}> <a href='!#'>{i}</a> </li>)
+        pageLinks.push(<li  key={i} onClick={() => props.nextPage(i)}> <a href='#'>{i}</a> </li>)
         
     }
     
